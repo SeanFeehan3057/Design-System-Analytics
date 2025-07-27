@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFF5ED;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .last-updated {
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #B037A6;
+        }
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+        .chart-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .repos-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .repo-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .repo-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 15px;
+            position: relative;
+        }
+        .repo-name {
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+            padding-right: 24px;
+        }
+        .repo-version {
+            color: #B037A6;
+            font-family: monospace;
+            background-color: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .repo-status {
+            font-size: 0.9em;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+        .status-dot {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .status-dot.latest {
+            background-color: #28C76F;  /* Green */
+        }
+        .status-dot.outdated {
+            background-color: #FFA426;  /* Orange */
+        }
+        .status-dot.none {
+            background-color: #EA5455;  /* Red */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Design System Analytics</h1>
+            <div class="last-updated" id="lastUpdated">Last updated: Loading...</div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="totalHours">-</div>
+                <div class="stat-label">Total Hours Saved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalComponents">-</div>
+                <div class="stat-label">Total Components Used</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalInstances">-</div>
+                <div class="stat-label">Total Component Instances</div>
+            </div>
+        </div>
+
+        <div class="repos-container">
+            <h2>System Adoption</h2>
+            <div class="repo-list" id="repoList"></div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="componentsChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('weekly-impact.json');
+                const data = await response.json();
+                
+                // Get file modification time
+                const statsResponse = await fetch('weekly-impact.json', { method: 'HEAD' });
+                const lastModified = new Date(statsResponse.headers.get('last-modified'));
+                const formattedDate = lastModified.toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                const formattedTime = lastModified.toLocaleTimeString('en-GB', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                }).toLowerCase();
+                document.getElementById('lastUpdated').textContent = `Last updated on ${formattedDate} at ${formattedTime}`;
+                
+                // Calculate totals
+                let totalHoursSaved = 0;
+                let totalComponentsUsed = 0;
+                let totalInstances = 0;
+                const componentStats = {};
+
+                data.forEach(repo => {
+                    totalHoursSaved += repo.hoursSaved;
+                    totalComponentsUsed += repo.components.filter(c => c.count > 0).length;
+                    
+                    // Calculate total instances for this repo
+                    const repoTotalInstances = repo.components.reduce((sum, component) => sum + component.count, 0);
+                    
+                    repo.components.forEach(component => {
+                        totalInstances += component.count;
+                        if (!componentStats[component.name]) {
+                            componentStats[component.name] = {
+                                count: 0,
+                                hoursSaved: 0
+                            };
+                        }
+                        componentStats[component.name].count += component.count;
+                        componentStats[component.name].hoursSaved += component.hoursSaved;
+                    });
+                });
+
+                // Update stats
+                document.getElementById('totalHours').textContent = formatNumber(totalHoursSaved);
+                document.getElementById('totalComponents').textContent = formatNumber(totalComponentsUsed);
+                document.getElementById('totalInstances').textContent = formatNumber(totalInstances);
+
+                // Create chart
+                const sortedComponents = Object.entries(componentStats)
+                    .filter(([_, stats]) => stats.hoursSaved > 0)
+                    .sort((a, b) => b[1].hoursSaved - a[1].hoursSaved);
+
+                const ctx = document.getElementById('componentsChart').getContext('2d');
+                // Calculate height based on number of components (30px per component + padding)
+                const minHeight = Math.max(400, sortedComponents.length * 30);
+                ctx.canvas.parentNode.style.height = `${minHeight}px`;
+
+                new Chart(ctx, {
+                    type: 'bar',  // Using standard bar with indexAxis: 'y' for horizontal
+                    data: {
+                        labels: sortedComponents.map(([name]) => name),
+                        datasets: [{
+                            label: 'Hours Saved',
+                            data: sortedComponents.map(([_, stats]) => stats.hoursSaved),
+                            backgroundColor: '#B037A6',
+                            borderColor: '#B037A6',
+                            borderWidth: 1,
+                            barThickness: 16  // Set consistent bar thickness
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',  // This makes the bars horizontal
+                        responsive: true,
+                        maintainAspectRatio: false,  // Allow the chart to fill the container
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Components by Hours Saved',
+                                font: {
+                                    size: 16
+                                },
+                                padding: {
+                                    top: 10,
+                                    bottom: 30
+                                }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        },
+                        layout: {
+                            padding: {
+                                left: 10,
+                                right: 30,
+                                top: 10,
+                                bottom: 10
+                            }
+                        },
+                        scales: {
+                            x: {  // Changed from y to x since axes are swapped
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Hours Saved',
+                                    padding: {
+                                        top: 20
+                                    }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    padding: 10,  // Add padding to the labels
+                                    font: {
+                                        size: 12  // Ensure consistent font size
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Update repository list
+                const repoList = document.getElementById('repoList');
+                data.forEach(repo => {
+                    const repoCard = document.createElement('div');
+                    repoCard.className = 'repo-card';
+                    
+                    const repoName = repo.repo.replace('envato/', '');
+                    const version = repo.version || 'Version not specified';
+                    const activeComponents = repo.components.filter(c => c.count > 0).length;
+                    const totalInstances = repo.components.reduce((sum, component) => sum + component.count, 0);
+                    
+                    // Determine status dot class
+                    let statusClass = 'none';  // Default red
+                    if (version !== 'Version not specified') {
+                        statusClass = repo.isLatest ? 'latest' : 'outdated';  // Green if latest, orange if outdated
+                    }
+                    
+                    repoCard.innerHTML = `
+                        <div class="status-dot ${statusClass}"></div>
+                        <div class="repo-name">${repoName}</div>
+                        <div class="repo-version">${version}</div>
+                        <div class="repo-status">
+                            ${activeComponents} components used<br>
+                            ${formatNumber(totalInstances)} total instances
+                        </div>
+                    `;
+                    
+                    repoList.appendChild(repoCard);
+                });
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('lastUpdated').textContent = 'Last updated: Error loading timestamp';
+            }
+        }
+
+        function formatNumber(num) {
+            return new Intl.NumberFormat().format(num);
+        }
+
+        loadData();
+    </script>
+</body>
+</html> 

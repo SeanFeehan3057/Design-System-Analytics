@@ -1,0 +1,765 @@
+[
+  {
+    "repo": "envato/sso-server",
+    "version": "^0.16.11",
+    "isLatest": false,
+    "componentsUsed": 0,
+    "hoursSaved": 13832,
+    "components": [
+      {
+        "name": "Badge",
+        "count": 21,
+        "hoursSaved": 168
+      },
+      {
+        "name": "Banner",
+        "count": 9,
+        "hoursSaved": 72
+      },
+      {
+        "name": "Bleed",
+        "count": 17,
+        "hoursSaved": 136
+      },
+      {
+        "name": "Box",
+        "count": 412,
+        "hoursSaved": 3296
+      },
+      {
+        "name": "Button",
+        "count": 124,
+        "hoursSaved": 992
+      },
+      {
+        "name": "ButtonBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ButtonLink",
+        "count": 78,
+        "hoursSaved": 624
+      },
+      {
+        "name": "ButtonLinkBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Carousel",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Checkbox",
+        "count": 2,
+        "hoursSaved": 16
+      },
+      {
+        "name": "Chip",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Columns",
+        "count": 39,
+        "hoursSaved": 312
+      },
+      {
+        "name": "Divider",
+        "count": 8,
+        "hoursSaved": 64
+      },
+      {
+        "name": "DropdownMenu",
+        "count": 9,
+        "hoursSaved": 72
+      },
+      {
+        "name": "DropdownMenuTrigger",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "FieldLabel",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "FieldMessage",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Hidden",
+        "count": 11,
+        "hoursSaved": 88
+      },
+      {
+        "name": "Icon",
+        "count": 19,
+        "hoursSaved": 152
+      },
+      {
+        "name": "IconButton",
+        "count": 4,
+        "hoursSaved": 32
+      },
+      {
+        "name": "IconButtonLink",
+        "count": 2,
+        "hoursSaved": 16
+      },
+      {
+        "name": "Inline",
+        "count": 52,
+        "hoursSaved": 416
+      },
+      {
+        "name": "Link",
+        "count": 6,
+        "hoursSaved": 48
+      },
+      {
+        "name": "LoadingSpinner",
+        "count": 14,
+        "hoursSaved": 112
+      },
+      {
+        "name": "MenuItem",
+        "count": 10,
+        "hoursSaved": 80
+      },
+      {
+        "name": "MenuItemLink",
+        "count": 9,
+        "hoursSaved": 72
+      },
+      {
+        "name": "Message",
+        "count": 42,
+        "hoursSaved": 336
+      },
+      {
+        "name": "MessageBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Modal",
+        "count": 28,
+        "hoursSaved": 224
+      },
+      {
+        "name": "ModalBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalFooter",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalHeader",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "PageBlock",
+        "count": 41,
+        "hoursSaved": 328
+      },
+      {
+        "name": "PopoverBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioGroup",
+        "count": 9,
+        "hoursSaved": 72
+      },
+      {
+        "name": "RadioGroupItem",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioItem",
+        "count": 8,
+        "hoursSaved": 64
+      },
+      {
+        "name": "Select",
+        "count": 11,
+        "hoursSaved": 88
+      },
+      {
+        "name": "Stack",
+        "count": 264,
+        "hoursSaved": 2112
+      },
+      {
+        "name": "Tab",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "TabLink",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Table",
+        "count": 6,
+        "hoursSaved": 48
+      },
+      {
+        "name": "TablePagination",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Text",
+        "count": 404,
+        "hoursSaved": 3232
+      },
+      {
+        "name": "TextField",
+        "count": 10,
+        "hoursSaved": 80
+      },
+      {
+        "name": "TextLink",
+        "count": 48,
+        "hoursSaved": 384
+      },
+      {
+        "name": "Toast",
+        "count": 6,
+        "hoursSaved": 48
+      },
+      {
+        "name": "Tooltip",
+        "count": 6,
+        "hoursSaved": 48
+      }
+    ]
+  },
+  {
+    "repo": "envato/labs.envato.com",
+    "version": "0.16.2",
+    "isLatest": false,
+    "componentsUsed": 0,
+    "hoursSaved": 19336,
+    "components": [
+      {
+        "name": "Badge",
+        "count": 33,
+        "hoursSaved": 264
+      },
+      {
+        "name": "Banner",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Bleed",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Box",
+        "count": 925,
+        "hoursSaved": 7400
+      },
+      {
+        "name": "Button",
+        "count": 228,
+        "hoursSaved": 1824
+      },
+      {
+        "name": "ButtonBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ButtonLink",
+        "count": 28,
+        "hoursSaved": 224
+      },
+      {
+        "name": "ButtonLinkBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Carousel",
+        "count": 9,
+        "hoursSaved": 72
+      },
+      {
+        "name": "Checkbox",
+        "count": 7,
+        "hoursSaved": 56
+      },
+      {
+        "name": "Chip",
+        "count": 52,
+        "hoursSaved": 416
+      },
+      {
+        "name": "Columns",
+        "count": 3,
+        "hoursSaved": 24
+      },
+      {
+        "name": "Divider",
+        "count": 5,
+        "hoursSaved": 40
+      },
+      {
+        "name": "DropdownMenu",
+        "count": 39,
+        "hoursSaved": 312
+      },
+      {
+        "name": "DropdownMenuTrigger",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "FieldLabel",
+        "count": 6,
+        "hoursSaved": 48
+      },
+      {
+        "name": "FieldMessage",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Hidden",
+        "count": 2,
+        "hoursSaved": 16
+      },
+      {
+        "name": "Icon",
+        "count": 81,
+        "hoursSaved": 648
+      },
+      {
+        "name": "IconButton",
+        "count": 64,
+        "hoursSaved": 512
+      },
+      {
+        "name": "IconButtonLink",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Inline",
+        "count": 147,
+        "hoursSaved": 1176
+      },
+      {
+        "name": "Link",
+        "count": 6,
+        "hoursSaved": 48
+      },
+      {
+        "name": "LoadingSpinner",
+        "count": 16,
+        "hoursSaved": 128
+      },
+      {
+        "name": "MenuItem",
+        "count": 31,
+        "hoursSaved": 248
+      },
+      {
+        "name": "MenuItemLink",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Message",
+        "count": 25,
+        "hoursSaved": 200
+      },
+      {
+        "name": "MessageBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Modal",
+        "count": 9,
+        "hoursSaved": 72
+      },
+      {
+        "name": "ModalBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalFooter",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalHeader",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "PageBlock",
+        "count": 28,
+        "hoursSaved": 224
+      },
+      {
+        "name": "PopoverBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioGroup",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioGroupItem",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioItem",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Select",
+        "count": 8,
+        "hoursSaved": 64
+      },
+      {
+        "name": "Stack",
+        "count": 97,
+        "hoursSaved": 776
+      },
+      {
+        "name": "Tab",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "TabLink",
+        "count": 25,
+        "hoursSaved": 200
+      },
+      {
+        "name": "Table",
+        "count": 3,
+        "hoursSaved": 24
+      },
+      {
+        "name": "TablePagination",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Text",
+        "count": 470,
+        "hoursSaved": 3760
+      },
+      {
+        "name": "TextField",
+        "count": 12,
+        "hoursSaved": 96
+      },
+      {
+        "name": "TextLink",
+        "count": 48,
+        "hoursSaved": 384
+      },
+      {
+        "name": "Toast",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Tooltip",
+        "count": 10,
+        "hoursSaved": 80
+      }
+    ]
+  },
+  {
+    "repo": "envato/elements-storefront",
+    "version": "^0.16.11",
+    "isLatest": false,
+    "componentsUsed": 0,
+    "hoursSaved": 336,
+    "components": [
+      {
+        "name": "Badge",
+        "count": 3,
+        "hoursSaved": 24
+      },
+      {
+        "name": "Banner",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Bleed",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Box",
+        "count": 6,
+        "hoursSaved": 48
+      },
+      {
+        "name": "Button",
+        "count": 3,
+        "hoursSaved": 24
+      },
+      {
+        "name": "ButtonBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ButtonLink",
+        "count": 2,
+        "hoursSaved": 16
+      },
+      {
+        "name": "ButtonLinkBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Carousel",
+        "count": 8,
+        "hoursSaved": 64
+      },
+      {
+        "name": "Checkbox",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Chip",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Columns",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Divider",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "DropdownMenu",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "DropdownMenuTrigger",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "FieldLabel",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "FieldMessage",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Hidden",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Icon",
+        "count": 3,
+        "hoursSaved": 24
+      },
+      {
+        "name": "IconButton",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "IconButtonLink",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Inline",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Link",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "LoadingSpinner",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "MenuItem",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "MenuItemLink",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Message",
+        "count": 3,
+        "hoursSaved": 24
+      },
+      {
+        "name": "MessageBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Modal",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalFooter",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "ModalHeader",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "PageBlock",
+        "count": 2,
+        "hoursSaved": 16
+      },
+      {
+        "name": "PopoverBase",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioGroup",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioGroupItem",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "RadioItem",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Select",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Stack",
+        "count": 5,
+        "hoursSaved": 40
+      },
+      {
+        "name": "Tab",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "TabLink",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Table",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "TablePagination",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Text",
+        "count": 5,
+        "hoursSaved": 40
+      },
+      {
+        "name": "TextField",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "TextLink",
+        "count": 2,
+        "hoursSaved": 16
+      },
+      {
+        "name": "Toast",
+        "count": 0,
+        "hoursSaved": 0
+      },
+      {
+        "name": "Tooltip",
+        "count": 0,
+        "hoursSaved": 0
+      }
+    ]
+  },
+  {
+    "repo": "envato/elements-blog-frontend",
+    "version": "",
+    "isLatest": false,
+    "componentsUsed": 0,
+    "hoursSaved": 0,
+    "components": []
+  },
+  {
+    "repo": "envato/landing-page-service",
+    "version": "",
+    "isLatest": false,
+    "componentsUsed": 0,
+    "hoursSaved": 0,
+    "components": []
+  }
+]

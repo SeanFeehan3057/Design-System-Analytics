@@ -1,0 +1,6 @@
+envato/sso-server|app/javascript|@envato/design-system
+envato/labs.envato.com|packages/rails-app/app/javascript|@envato/design-system
+envato/elements-blog-frontend|app|@envato/design-system
+envato/landing-page-service|@envato/design-system
+envato/elements-storefront|packages|@envato/design-system
+
