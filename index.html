@@ -59,11 +59,35 @@
         .info-icon {
             width: 14px;
             height: 14px;
-            opacity: 0.6;
+            opacity: 0.8;
             cursor: help;
+            color: #000000;
         }
         .info-icon:hover {
             opacity: 1;
+        }
+        /* Tooltip styling */
+        .info-icon-wrapper {
+            position: relative;
+            display: inline-flex;
+        }
+        .info-icon-wrapper:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: calc(100% + 5px);
+            background: #2C2C2C;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            white-space: nowrap;
+            z-index: 100;
+            pointer-events: none;
+            text-transform: none;
+            font-weight: normal;
+            letter-spacing: normal;
         }
         .chart-container {
             background-color: white;
@@ -159,9 +183,11 @@
                 <div class="stat-value" id="totalHours">-</div>
                 <div class="stat-label">
                     TOTAL HOURS SAVED
-                    <svg class="info-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                    </svg>
+                    <div class="info-icon-wrapper" data-tooltip="Calculated based on 8 hours to design and build a component">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
             <div class="stat-card">
